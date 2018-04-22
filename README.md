@@ -17,13 +17,13 @@ After applying with Spherical Mercator, top-left most is original with tile inde
 
 * Creating an instance of SphericalMercator with default tile size of 256 * 256
 
-```
+```swift
 let sphericalMercator = SphericalMercator()
 ```
 
 * Creating an instance of SphericalMercator with set tile size
 
-```
+```swift
 let sphericalMercator = SphericalMercator(size: 128)
 ```
 
@@ -31,7 +31,7 @@ let sphericalMercator = SphericalMercator(size: 128)
 
 * Converting longitude/latitude location to tile index
 
-```
+```swift
 let bounds = sphericalMercator.xyz(bbox: [location.longitude, location.latitude, location.longitude, location.latitude], zoom: 22)
 let tileIndex = (x: Int(floor(bounds["minX"]!)), y: Int(floor(bounds["maxY"]!)))
 ```
@@ -40,7 +40,7 @@ let tileIndex = (x: Int(floor(bounds["minX"]!)), y: Int(floor(bounds["maxY"]!)))
 
 or you can do this
 
-```
+```swift
 let bounds = sphericalMercator.xyz(bbox: [location.longitude, location.latitude, 0.0, 0.0], zoom: 22)
 let tileIndex = (x: Int(floor(bounds["minX"]!)), y: Int(floor(bounds["maxY"]!)))
 ```
@@ -49,7 +49,7 @@ it will give you the same tile index.
 
 * Converting from tile index to bounding box of longitude/latitude
 
-```
+```swift
 let bbox = sphericalMercator.bbox(x: Double(x), y: Double(y), zoom: 22)
 ```
 
